@@ -1,0 +1,32 @@
+
+///////////////////////////////////////////////sms
+ Button buttonfrom=(Button)findViewById(R.id.buttonfrom);
+        buttonfrom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SmsManager smsManager=SmsManager.getDefault();
+                smsManager.sendTextMessage("+917997677305",null,"temp",null,null);
+
+            }
+        });
+    
+	
+	 <uses-permission android:name="android.permission.SEND_SMS"/>
+	 
+	 
+	 
+	//////////////////////////////// button click from one activity to another
+	 
+	 
+	  Button buttonfrom = (Button) findViewById(R.id.buttonfrom);
+        buttonfrom.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                buttonto();
+            }
+        });
+    }
+    public void buttonto(){
+        Intent intent =new Intent(MainActivity.this, classroom.class);
+        startActivity(intent);
+    }
